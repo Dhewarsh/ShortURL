@@ -13,17 +13,18 @@ import java.time.LocalDateTime;
 
 @Service
 public class ShortUrlImpl implements ShortUrlService {
+
     @Autowired
     private UrlRepo urlRepo;
 
     @Override
     public UrlResponseBody getShortUrl(UrlRequestBody requestBody) {
-        String shortUrl = UrlTool.getShortUrl(requestBody.getUrl());
+        String shortUrl = UrlTool.getShortUrl(requestBody.getId());
         
         Url url = new Url();
         url.setOrgUrl(requestBody.getUrl());
         url.setShortUrl(shortUrl);
-        url.setCreatedUrl(LocalDateTime.now());
+        url.setCreatedTime(LocalDateTime.now());
         url.setDuration(requestBody.getDuration());
         
         url = urlRepo.save(url);

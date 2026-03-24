@@ -1,14 +1,10 @@
 package com.algorithms.designpatterns.shorturl.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.time.LocalDateTime;
-
-@Getter
-@Setter
+@Data
 public class UrlRequestBody {
     public Long id;
     public String url;
-    public LocalDateTime duration;
+    public String duration;
 }

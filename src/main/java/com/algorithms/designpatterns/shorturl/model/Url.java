@@ -16,6 +16,6 @@ public class Url {
     private Long id;
     private String orgUrl;
     private String shortUrl;
-    private LocalDateTime createdUrl;
-    private LocalDateTime duration;
+    private LocalDateTime createdTime;
+    private String duration;
 }
