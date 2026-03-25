@@ -35,4 +35,10 @@ public class ShortUrlImpl implements ShortUrlService {
         
         return response;
     }
+
+    @Override
+    public void redirectUrl(String shortUrl) {
+        String orgUrl = urlRepo.findByShortUrl(shortUrl);
+        UrlTool.callUrl(orgUrl);
+    }
 }

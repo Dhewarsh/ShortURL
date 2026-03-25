@@ -1,5 +1,7 @@
 package com.algorithms.designpatterns.shorturl.utils;
 
+import static com.algorithms.designpatterns.shorturl.utils.UrlConstants.HOST_NAME;
+
 public class UrlTool {
     public static char[] shorturl;
 
@@ -9,7 +11,7 @@ public class UrlTool {
     }
 
     public static String generateUrl(Long id){
-        return addHexaDecimals(UrlConstants.BASE_URL, getHexaDecimal(id));
+        return HOST_NAME + addHexaDecimals(UrlConstants.BASE_CALC_URL, getHexaDecimal(id));
     }
 
     public static String addHexaDecimals(String base, String value){
@@ -37,5 +39,9 @@ public class UrlTool {
 
     public static Long getDecimal(Character c){
         return (long) Character.digit(c, 16);
+    }
+
+    public static void callUrl(String orgUrl){
+        //Needs to be implemented
     }
 }

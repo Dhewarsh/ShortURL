@@ -23,4 +23,9 @@ public class HomePage {
     public UrlResponseBody getShortUrl(@RequestBody UrlRequestBody requestBody) {
         return shortUrlService.getShortUrl(requestBody);
     }
+
+    @GetMapping("/{url}")
+    public void redirectUrl (@PathVariable String url){
+        shortUrlService.redirectUrl(url);
+    }
 }
